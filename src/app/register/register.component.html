@@ -1,0 +1,129 @@
+<!-- register success msg -->
+<div *ngIf="registerStatus"
+style="margin-top: 500px;"
+ class=" mt-5 text-center text-primary">
+  <h3 class="animate__animated animate__slideInDown" >Thnak You for Joining❤️ <br> <br>
+     We are processing your request ...... <br> Please Wait a moment......!</h3>
+     <img src="https://mymavenedu.com/wp-content/uploads/2021/08/college-students-university-education-concept-people-illustration_169479-534.jpg" alt="">
+</div>
+
+
+<!-- register design -->
+<div *ngIf="!registerStatus"
+
+ class="container">
+    <div class="row mt-5">
+      <h1 class="text-center mt-1"> <b>Student Registration Form</b></h1>
+        <div class="col-5 mt-3">
+            <img src="https://media.istockphoto.com/id/1184843761/vector/fill-in-test-sheet-with-a-check-and-cross-get-an-a-on-exam-or-class-promotion-test-verify.jpg?s=612x612&w=0&k=20&c=J5JjRPPgZM1p7rtu_74IX6FesYhMRuylh_wxRplnhPo="
+             alt="" style="margin-left: -100px;width: 600px;">
+             <p>This is Dummy Data: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Facere tenetur voluptate eum amet eos officia a temporibus, deleniti assumenda neque commodi
+                reiciendis modi itaque quos, dolores asperiores quibusdam magnam possimus. 
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis ipsa hic ea 
+              qui laboriosam facere quas doloremque fugiat. 
+               </p>
+        </div>
+
+
+        <div class="col-7  p-2 mt-5" 
+        style="width: 600px;margin-left: 50px;background-color: white;border-radius: 10px;
+         box-shadow: 0px 0px 12px 0px black;">
+
+            <form [formGroup]="registerForm">
+
+<div class="form-floating mb-2">              
+<input type="text" name="admno" formControlName="admno" placeholder="Admission Number" class="form-control mt-2">
+<div *ngIf="this.registerForm.get('admno')?.errors && this.registerForm.get('admno')?.touched"
+class="text-danger">Invalid Admission Number</div>
+<label for="floatingInput">Admission Number</label>
+</div>
+
+
+<div class="form-floating mb-2">   
+<input type="text" name="firstName" formControlName="firstName" placeholder="Firstname" class="form-control mt-2">
+<div *ngIf="this.registerForm.get('firstName')?.errors && this.registerForm.get('firstName')?.touched"
+class="text-danger">Invalid Name</div>
+<label for="floatingInput">Firstname</label>
+</div>
+
+
+<div class="form-floating mb-2">   
+<input type="text" name="lastName" formControlName="lastName" placeholder="Lastname" class="form-control mt-2">
+<div *ngIf="this.registerForm.get('lastName')?.errors && this.registerForm.get('lastName')?.touched"
+class="text-danger">Invalid Name</div>
+<label for="floatingInput">Lastname</label>
+</div>
+
+
+<div class="form-floating mb-2">   
+<input type="text" name="address" formControlName="address" placeholder="Address" class="form-control mt-2">
+ <div *ngIf="this.registerForm.get('address')?.errors && this.registerForm.get('address')?.touched"
+class="text-danger">Address is Required</div>
+<label for="floatingInput">Address</label>
+</div> 
+
+
+<div class="form-floating mb-2">   
+<input type="text" name="emailId" formControlName="emailId" placeholder="Email" class="form-control mt-2">
+<div *ngIf="this.registerForm.get('emailId')?.errors && this.registerForm.get('emailId')?.touched"
+class="text-danger">Invalid Email Id</div>
+<label for="floatingInput">Email Id</label>
+</div>
+
+
+<div class="form-floating mb-2">   
+<input type="text" name="mobileNo" formControlName="mobileNo" placeholder="Mobile Number" class="form-control mt-2">
+<div *ngIf="this.registerForm.get('mobileNo')?.errors && this.registerForm.get('mobileNo')?.touched"
+class="text-danger">Invalid Mobile Number</div>
+<label for="floatingInput">Mobile Number</label>
+</div>
+
+<div class="mt-2">
+    <span>Gender :</span> &nbsp;&nbsp;
+    <label>
+        <input type="radio" name="gender" formControlName="gender" value="Male">
+        Male
+      </label>
+      &nbsp;&nbsp;
+      <label>
+        <input type="radio" name="gender" formControlName="gender" value="Female">
+        Female
+      </label>
+      &nbsp;&nbsp;
+      <label>
+        <input type="radio" name="gender" formControlName="gender" value="Others">
+        Others
+      </label>
+</div>
+<div *ngIf="registerForm.get('gender')?.errors && this.registerForm.get('gender')?.touched"
+class="text-danger">Gender is Required</div>
+
+
+<div class="mt-4">
+<span>DOB :</span> &nbsp;
+<input type="date"  name="dob" formControlName="dob"
+class="form-control" style="width: 450px;margin-left: 57px;margin-top: -30px;">
+</div>
+<div *ngIf="registerForm.get('dob')?.errors && this.registerForm.get('dob')?.touched"
+class="text-danger">Date of Birth is Required</div>
+
+
+<select  id="" class="form-control mt-2" name="groups" formControlName="groups" >
+    <option value="">Select A Group</option>
+    <option value="Biology">Biology</option>
+    <option value="Computer Science">Computer Science</option>
+    <option value="Commerce">Commerce</option>
+    <option value="Humanities">Humanities</option>
+   </select> 
+ <div *ngIf="registerForm.get('groups')?.errors && this.registerForm.get('groups')?.touched"
+ class="text-danger">Group is Required</div>
+
+  
+<button (click)="register()"
+class="btn btn-primary mt-2" style="width: 555px;">Register</button>
+           
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cookie&family=Creepster&family=Fredoka+One&family=Gentium+Book+Plus&family=Kaushan+Script&family=Martian+Mono:wght@300&family=Noto+Sans+Symbols+2&family=Nunito+Sans:wght@300&family=Poppins:wght@200&family=Roboto+Slab:wght@300&family=STIX+Two+Text&family=Satisfy&family=Solway:wght@300;400&family=Teko:wght@500&display=swap');
+body{
+    font-family: 'Solway', serif;
+}
